@@ -165,4 +165,53 @@ git show commitID (lynn.9702272)
 git show lynn.9702272
 ```
 
+### 8. commit 내용 수정하기
+
+- 바로 전 (직전) commit 내용 수정하기
+
+```bash
+git commit --amend
+```
+
+### 9. GitHub 의 온라인 주소 연결하기
+
+*등록하기*
+- git remote add 별명 주소
+
+```bash
+git remote add origin https://github.com/MOONYUBI/til_git.git
+```
+
+*목록보기*
+
+```bash
+git remote -v
+```
+
+- 삭제하기
+
+git remote remove 별명
+
+```bash
+git remote remove aaa
+git remote -v
+```
+
+### 10. GitHub로 등록(push)하기
+
+- git push -u 별명 현재브랜치
+
+```bash
+git push -u origin main
+```
+git push // 위의 명령과 같음
+
+### 11. 최소 알아야 하는 git 명령어
+
+```bash
+git add . 
+git commit 
+git push
+```
+
 
