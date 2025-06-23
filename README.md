@@ -316,6 +316,9 @@ edit bd3256d [커밋타입] 커밋 타이틀
 
 ```bash
 git rebase -i 해시값^ (Enter키)
+
+// 아래도 시도해보기 (맨 첫번째 줄)
+git rebase -i --root
 ```
 
 例 )
@@ -351,4 +354,8 @@ pick 8459f84 진행중
 
 ### 3.1 바로 수정 commit 수정 후 바로 push 하기
 
-### 3.1 이전 commit 수정 후 바로 push 하기
+```bash
+git push origin 브랜치명 --force
+```
+
+### 3.2 이전 commit 수정 후 바로 push 하기
