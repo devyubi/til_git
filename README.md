@@ -359,3 +359,41 @@ git push origin 브랜치명 --force
 ```
 
 ### 3.2 이전 commit 수정 후 바로 push 하기
+
+## 4. Clone
+
+### 4.1 https 로 clone
+
+- `.` 을 띄워쓰기 폴더 생성 할 필요 없이 clone(복제) 됨
+
+```bash
+git clone 깃허브주소 . (Enter 키)
+```
+
+### 4.2 gitHub `특정 branch` clone
+
+- 이미 특정 저장소를 clone 한 상태에서 branch 를 가져오고 싶다면
+
+```bash
+git fetch 리모트별칭 branch명
+git checkout branch명
+
+git fetch origin jeju (Enter키)
+git checkout jeju (Enter키)
+```
+
+- clone 과 함께 동시에 branch 지정하여 clone 하기
+
+```bash
+git clone -b 브랜치명 --single-branch http주소 .
+
+git clone -b jeju --single-branch http~~~ .
+```
+
+## `gitHub branch 삭제`하기
+
+```bash
+git push 리모트별칭 -d 브랜치명
+
+git push origin -d jeju
+```
