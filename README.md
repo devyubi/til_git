@@ -397,3 +397,109 @@ git push 리모트별칭 -d 브랜치명
 
 git push origin -d jeju
 ```
+
+## 5. GitHub 협업 과정
+
+- 팀장(github 관리자)과 팀원(fork 진행)으로 구성 권장
+
+### 5.1 1번 과정
+
+- 팀장
+
+1.  GitHub 조장소 프로젝트 생성 진행
+2.  PC 에 프로젝트 폴더를 만든다
+3.  프로젝트 기본 구조를 생성한다
+4.  프로젝트 기본 구조를 생성 및 세팅한다.
+5.  `git init` 초기화
+6.  `git add remote origin 주소` (github에 있음)
+7.  `git add .`
+8.  `git commit -m [내용]` (내용은 자유롭게)
+9.  `git push origin main`
+10. 위 9번까지 완료 후, github 주소를 팀원과 공유하고 팀원에게 `fork 받으세요`라고 전달. (메신저는 Slack 추천)
+
+### 5.2 2번 과정
+
+- 팀원
+
+1.  github 주소로 접근 후 `fork` 버튼을 눌러서 github 프로젝트 복사.
+2.  본인의 github로 이동하기
+3.  본인의 `github 주소를 미리 파악`해 두기
+4.  PC에 폴더 생성 후 VSCode 등록
+5.  `git clone (본인의) github 주소 .` (띄워쓰기 조심)
+
+### 5.3 3번 과정
+
+- 공통 (팀장/팀원)
+
+1.  `git branch 이름`
+2.  `git switch 이름`
+3.  각자 역할에 맞게 작업 진행
+4.  `git add .`
+5.  `git commit` <<메세지 컨벤션 지키기>>
+    예시 :
+    [feat] 새로운 기능 추가함
+    [fix] 버그 수정
+    [docs] 문서 수정(README.md 등)
+    [style] 코드의 스타일(띄워쓰기, 세미콜론 등)
+    [refector] 코드 리팩토링(기능변경, 코드 정리 등)
+    [test] 테스트 코드를 추가 한 경우
+    [core] 기타(빌드 설정, 패키지 설정 등의 개발환경 변경 시)
+
+※ 협업 시 엄청 중요함 ※ 6. `git push origin 이름`
+
+### 5.4 4번 과정
+
+- 팀원
+
+1.  각자 `Pull Request`를 작성한다.
+2.  팀장에게 PR 보냈음을 알린다 (메신저 Slack 사용 추천)
+3.  보내고 난 뒤, 팀장에게 sign 이 없으면 대기. (맘대로 만지면 안됨)
+
+### 5.5 5번 과정
+
+- 팀장
+
+1.  ※ 본인이 본인에게 `Pull Request`를 작성한다. ※
+
+### 5.6 6번 과정
+
+- 팀장
+
+1.  pr 을 보고, 소스를 보고, Conflict 가 발생하면 팀원 호출 (문제 발생 시, 팀원 호출하여 상의)
+2.  comment 달아주기
+
+- 위 과정을 반복해서 소스를 전체 main 에 merge 함.
+
+### 5.7 7번 과정 main 소스 Synch 요청
+
+팀장 : `main sync` 해달라고 요청하기.
+팀원 : 반드시 main 에서 `sync -> update` 진행하기.
+
+### 5.8 8번 과정
+
+- 팀원
+
+1.  `git switch main`
+2.  `git fetch`
+3.  `git pull`
+4.  `git branch -d 이름`
+5.  `git push origin -d 이름`
+6.  `git branch 이름`
+7.  `git switch 이름`
+
+### 5.9 9번 과정 : 재작업 반복
+
+- 팀장
+
+1.  `git switch main`
+2.  `git fetch`
+3.  `git pull`
+
+- 가끔 `소스 오류` 또는 `최신 내용이 안나오는 경우`가 존재함.
+  그럴 경우, `git merge origin/main` 해보면 보통 해결이 된다!
+
+4.  `git branch -d 이름`
+5.  `git push origin -d 이름`
+6.  `git branch 이름`
+7.  `git switch 이름`
+
